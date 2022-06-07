@@ -1,0 +1,25 @@
+
+.container{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    padding: 0.5%;
+    margin: 0.5%;
+}
+.container-fluid{
+    display:flex;
+    width: 100%;
+    padding: 0.5%;
+    margin: 0.5%;
+}
+.d-f-c{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.d-f{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

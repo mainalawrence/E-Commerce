@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="left">
+        Logo
+    </div>
+    <div class="container center">
+        <img src="../../../assets/filter.svg" alt="filter"/>
+        <div class="form">
+            <form #search="ngForm">
+                <input type="text" placeholder="  search.." ngModel name="search">
+                <button type="submit" [disabled]="!form.form.valid">
+                    Save
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="right">
+   
+    </div>
+</div>

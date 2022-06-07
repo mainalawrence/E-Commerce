@@ -1,0 +1,23 @@
+.grid{
+    display:grid;
+    grid-template-columns: repeat(6,15%);
+    grid-auto-rows:30%;
+    gap:1%;
+    background-color: white;
+    border-radius: 10px;
+}
+.container{
+    width: 90%;
+    margin: auto !important;
+    padding: 0.5%;
+    margin: 0.5%;
+}
+.card{
+    width: 100%;
+    padding: 0.5%;
+    margin: 0.5%;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
