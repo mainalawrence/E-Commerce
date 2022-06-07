@@ -2,13 +2,15 @@
     <div class="left">
         Logo
     </div>
-    <div class="container center">
+    <div class=" center">
+       <div class="">
         <img src="../../../assets/filter.svg" alt="filter"/>
+       </div>
         <div class="form">
             <form #search="ngForm">
                 <input type="text" placeholder="  search.." ngModel name="search">
-                <button type="submit" [disabled]="!form.form.valid">
-                    Save
+                <button class="btn" type="submit" [disabled]="!search.form.valid">
+                    Search
                 </button>
             </form>
         </div>
