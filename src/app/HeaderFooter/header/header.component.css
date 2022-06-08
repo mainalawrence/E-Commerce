@@ -13,6 +13,9 @@
 .left{
     display: flex;
 }
+.left>img{
+    width: 10%;
+}
 .image{
     display: flex;
 }

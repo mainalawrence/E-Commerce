@@ -21,3 +21,26 @@
     align-items: center;
     flex-direction: column;
 }
+/*phone*/
+@media only screen and (max-width: 375px)
+{  .grid{
+        display:grid;
+        grid-template-columns:90% ;
+        grid-auto-rows:auto;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+    }
+}
+/*tablet*/
+@media only screen and (min-width: 600px) and (max-width: 810px){
+    .grid{
+        display:grid;
+        grid-template-columns: repeat(3,25%);
+        grid-auto-rows:30%;
+        gap:1%;
+        background-color: white;
+        border-radius: 10px;
+        justify-content: center;
+    }
+}
