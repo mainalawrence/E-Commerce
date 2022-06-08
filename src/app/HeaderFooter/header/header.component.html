@@ -1,21 +1,22 @@
 <div class="container-fluid">
-    <div class="left">
-        <img src="../../../assets/brand.svg" alt="filter"/>
+    <div class="left ">
+        <img class="zoom" src="../../../assets/brand.svg" alt="filter"/>
+
     </div>
     <div class="center">
-        <img src="../../../assets/filter.svg" alt="filter"/>
+        <img  class="zoom" src="../../../assets/filter.svg" alt="filter"/>
         <div class="form">
             <form #search="ngForm">
                 <input type="text" placeholder="  search.." ngModel name="search">
-                <button class="btn" type="submit" [disabled]="!search.form.valid">
+                <button class="btn zoom" type="submit" [disabled]="!search.form.valid">
                     Search
                 </button>
             </form>
         </div>
     </div>
     <div class="right">
-        <img src="../../../assets/avata.svg" alt="filter"/>
-        <img src="../../../assets/cart.svg" alt="filter"/>
-        <button class="btn">Logout</button>
+        <img  class="zoom" src="../../../assets/avata.svg" alt="filter"/>
+        <img  class="zoom" src="../../../assets/cart.svg" alt="filter"/>
+        <button class="btn zoom">Logout</button>
     </div>
 </div>

@@ -12,9 +12,16 @@
 }
 .left{
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .left>img{
-    width: 10%;
+    width: 40%;
 }
 .image{
     display: flex;
@@ -62,4 +69,14 @@ width: 10%;
 .btn:hover{
     opacity: 80%;
     cursor: grab;
+}
+/*zooming the icons*/
+.zoom{
+  transition: transform .2s; /* Animation */
+}
+.zoom:hover{
+    transform: scale(1.5);
+}
+.zoom:focus{
+    transform: scale(1.5);  
 }

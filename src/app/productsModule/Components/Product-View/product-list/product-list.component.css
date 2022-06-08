@@ -21,6 +21,14 @@
     align-items: center;
     flex-direction: column;
 }
+
+/*zooming the icons*/
+.zoom{
+    transition: transform .2s; /* Animation */
+  }
+  .zoom:hover{
+      transform: scale(1.2);
+  }
 /*phone*/
 @media only screen and (max-width: 375px)
 {  .grid{
