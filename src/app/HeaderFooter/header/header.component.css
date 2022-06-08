@@ -8,29 +8,44 @@
     margin: auto;
     border-radius: 5px;
     margin-bottom:1%;
-    justify-content: space-between;
+    justify-content: space-evenly;
+}
+.left{
+    display: flex;
+}
+.image{
+    display: flex;
 }
 .form>form{
     display:flex;
     justify-content: center;
     align-items:center ;
 }
-
-.center{
+.right{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    width: 20%;
+}
+.right>img{
+    width: 20%;
+}
+.center{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+
 }
 .form >form>input{
     border-radius: 10px;
     padding: 3% 1%;
     border-width: 0 0  2px 0;
     outline: 0;
-
 }
 .center>img{
-width: 20%;
-margin-right: 10%;
+width: 10%;
+
 }
 .btn{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);

@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: aliceblue;
+    margin-top: 1%;
+
+}
+.position{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin-right: 1%;
+}
+.mpesa{
+    width: 20%;
+}
+.paypal{
+    width: 40%;
+}
