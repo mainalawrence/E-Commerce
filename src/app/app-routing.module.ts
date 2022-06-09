@@ -1,9 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductListComponent } from './productsModule/Components/Product-View/product-list/product-list.component';
+import {ErrorComponent} from './HeaderFooter/Error.Component/error.component'
 
 const routes: Routes = [
-  {path:'',component:ProductListComponent}
+  {
+  path:'',
+  loadChildren: () => import('./productsModule/products.module').then(m => m.ProductsModule)
+  },
+  {
+    path:'cart',
+    loadChildren: () => import('./cartModule/cart.module').then(m => m.CartModule)
+  },
+  {
+    path:'admin',
+    loadChildren: () => import('./adminModule/admin.module').then(m => m.AdminModule)
+  },
+  {
+path:'**',
+component:ErrorComponent
+  }
+
+
 ];
 
 @NgModule({

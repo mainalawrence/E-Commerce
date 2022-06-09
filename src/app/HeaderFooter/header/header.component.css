@@ -59,6 +59,7 @@
 width: 5%;
 
 }
+
 .btn{
     border: 0px;
     background-color: orange;
@@ -77,7 +78,4 @@ width: 5%;
 }
 .zoom:hover{
     transform: scale(1.5);
-}
-.zoom:focus{
-    transform: scale(1.5);  
 }
