@@ -15,6 +15,10 @@ const routes: Routes = [
     path:'admin',
     loadChildren: () => import('./adminModule/admin.module').then(m => m.AdminModule)
   },
+   {
+    path:'auth',
+    loadChildren: () => import('./authenticationModule/authentication.module').then(m => m.AuthenticationModule)
+  },
   {
 path:'**',
 component:ErrorComponent
