@@ -3,7 +3,7 @@ export interface Product {
     cost?:number,
     brand?:string,
     description?:string,
-    Features?:string,
-    Specifications?:string,
+    Features?:string[],
+    Specifications?:string[],
     images?:File[]
 }
