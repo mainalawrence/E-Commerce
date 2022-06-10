@@ -22,7 +22,11 @@ import { RouterModule } from '@angular/router';
   ],
   imports:[
     RouterModule.forChild([{
-      path:'',component:ProductListComponent
+      path:'',
+      children:[
+        {path:'',component:ProductListComponent},
+        {path:':id',component:ProductDetailsComponent}
+      ]
     }]
     ),
     CommonModule

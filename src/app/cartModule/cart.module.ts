@@ -12,8 +12,12 @@ import { NgxPayPalModule } from 'ngx-paypal';
   ],
   imports: [
     RouterModule.forChild([{
-      path:'',component:CartComponent
-    }]),
+      path:'',
+      children:[
+        {path:'',component:CartComponent}
+      ]
+    }
+    ]),
     CommonModule,
     NgxPayPalModule
   ]
