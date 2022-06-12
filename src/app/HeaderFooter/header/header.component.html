@@ -1,10 +1,11 @@
 <div class="container-fluid">
     <div class="left ">
-        <img routerLink="/" class="zoom" src="../../../assets/brand.svg" alt="filter"/>
+        <img routerLink="/products" class="zoom" src="../../../assets/brand.svg" alt="filter"/>
 
     </div>
     <div class="center">
-        <img routerLink="/filter" class="zoom" src="../../../assets/filter.svg" alt="filter"/>
+      
+<div class="filter-container"><img routerLink="/filter" class="zoom" src="../../../assets/filter.svg" alt="filter" /></div>
         <div class="form">
             <form #search="ngForm">
                 <input type="text" placeholder="  search.." ngModel name="search">
@@ -17,6 +18,6 @@
     <div class="right">
         <img  routerLink="/auth/login" class="zoom" src="../../../assets/avata.svg" alt="filter"/>
         <img   routerLink="/cart" class="zoom" src="../../../assets/cart.svg" alt="filter"/>
-        <button  routerLink="/" class="btn zoom">Logout</button>
+        <button  routerLink="/products" class="btn zoom">Logout</button>
     </div>
 </div>

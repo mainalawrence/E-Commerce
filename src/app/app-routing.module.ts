@@ -4,7 +4,7 @@ import {ErrorComponent} from './HeaderFooter/Error.Component/error.component'
 
 const routes: Routes = [
   {
-  path:'',
+  path:'products',
   loadChildren: () => import('./productsModule/products.module').then(m => m.ProductsModule)
   },
   {
@@ -20,8 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./authenticationModule/authentication.module').then(m => m.AuthenticationModule)
   },
   {
-path:'**',
-component:ErrorComponent
+    path:'**',component:ErrorComponent
   }
 
 

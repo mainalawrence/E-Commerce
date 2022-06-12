@@ -44,7 +44,7 @@
     display:flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 20%;
+    width: 30%;
 
 }
 .form >form>input{
@@ -78,4 +78,7 @@ width: 5%;
 }
 .zoom:hover{
     transform: scale(1.5);
+}
+.filter-container{
+    width: 10%;
 }
