@@ -4,6 +4,7 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ProductFormComponent } from './component/product-form/product-form.component';
 import { ProductviewComponent } from './component/productview/productview.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([{
       path:'',component:DashboardComponent
     }]),
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

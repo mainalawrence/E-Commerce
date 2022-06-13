@@ -1,0 +1,13 @@
+.container{
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    padding: 5%;
+    flex-direction: column;
+}
+input{
+    padding: 1% 2%;
+    margin: 0.4%;
+    border-radius: 10px;
+    
+}

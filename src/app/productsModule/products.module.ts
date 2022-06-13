@@ -5,9 +5,10 @@ import { ProductListComponent } from './Product-View/product-list/product-list.c
 import { ProductDetailsComponent } from './Product-View/product-details/product-details.component';
 import { ProductPhotoSlideComponent } from './Product-View/product-photo-slide/product-photo-slide.component';
 import { ProductComponent } from './Product-View/product/product.component';
-import { ProductFilterComponent } from './ProductUtility/product-filter/product-filter.component';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
 import { FilterPipe } from './ProductUtility/filter.pipe';
 import { RouterModule } from '@angular/router';
+import { ErrorComponent } from '../HeaderFooter/Error.Component/error.component';
 
 
 
@@ -25,7 +26,9 @@ import { RouterModule } from '@angular/router';
       path:'',
       children:[
         {path:'',component:ProductListComponent},
-        {path:':id',component:ProductDetailsComponent}
+        {path:'filter', component:ProductFilterComponent},
+        {path:':id',component:ProductDetailsComponent},
+        {path:'**',component:ErrorComponent}
       ]
     }]
     ),
