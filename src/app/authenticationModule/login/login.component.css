@@ -122,7 +122,9 @@ select.ng-valid.ng-touched {
 select.ng-invalid.ng-touched {
     border-left: 10px solid #a94442;
 }
+.header{
 
+}
 .form-label {
     width: 30%;
     margin: 2% 0 0 0;
@@ -132,4 +134,10 @@ select.ng-invalid.ng-touched {
 .message {
     background-color: transparent !important;
     margin: 4%;
+}
+a{
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1%;
+    color: black;
 }

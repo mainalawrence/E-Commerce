@@ -1,7 +1,7 @@
 <div class="container">
     <div class="center">
         <div class="card">
-                <h2>Login</h2>
+                <h2 class="header">Login</h2>
            <div class="container">
                 <form [formGroup]="loginForm" class="form">
                     <div class="form-group">
@@ -12,7 +12,7 @@
                     </div>
                     <div class="form-group">
                         <input id="password" type="password" formControlName="password" class="form-controllers"
-                            placeholder="Enter Email" />
+                            placeholder="Enter password" />
                         <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
                             class="alert alert-danger">
                             Invalid Password
@@ -26,6 +26,7 @@
                     <button class="btn zoom btn-google "><img class="google" src="../../../assets/loginGoogle.svg" alt="">Sign in With Google</button>
                     <button class="btn zoom btn-fb"><img  class="facebook" src="../../../assets/LoginFb.svg" alt="">Sign in With Facebook</button>
                 </div>
+                <a routerLink="/auth/signup">Create account?</a>
            </div>
 
         </div>
