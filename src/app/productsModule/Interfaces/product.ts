@@ -7,5 +7,7 @@ export interface Product {
     Features?:string[],
     Specifications?:string[],
     images?:string[] | File,
-    type?:string
+    type?:string,
+    quantity?:number,
+    subtotal?:number
 }

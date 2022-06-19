@@ -82,3 +82,33 @@ width: 5%;
 .filter-container{
     width: 10%;
 }
+.hamburger{
+visibility: hidden !important;
+}
+/*phone*/
+@media only screen and (max-width: 375px) {
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+}
+.right{
+    visibility: hidden;
+}
+.left{
+   justify-content: space-between !important;
+     width: 100% !important;
+     margin: 1%;
+}
+.hamburger {
+justify-self: end !important;
+visibility: visible !important;
+width: 15% !important;
+}
+}
+
+
+
+/*tablet*/
+@media only screen and (min-width: 600px) and (max-width: 810px) {
+ 
+}

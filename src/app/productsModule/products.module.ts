@@ -9,6 +9,7 @@ import { ProductFilterComponent } from './product-filter/product-filter.componen
 import { FilterPipe } from './ProductUtility/filter.pipe';
 import { RouterModule } from '@angular/router';
 import { ErrorComponent } from '../HeaderFooter/Error.Component/error.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -19,7 +20,8 @@ import { ErrorComponent } from '../HeaderFooter/Error.Component/error.component'
     ProductPhotoSlideComponent,
     ProductComponent,
     ProductFilterComponent,
-    FilterPipe
+    FilterPipe,
+    PaginationComponent
   ],
   imports:[
     RouterModule.forChild([{

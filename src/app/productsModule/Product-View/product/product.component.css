@@ -18,3 +18,18 @@
     width: 100%;
     border-radius: 5px;
 }
+
+/*phone*/
+@media only screen and (max-width: 375px) {
+ .container{
+    width: 100%;
+ }
+ .details{
+    flex-direction: column !important;
+ }
+}
+
+
+
+/*tablet*/
+@media only screen and (min-width: 600px) and (max-width: 810px) {}

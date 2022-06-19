@@ -90,3 +90,35 @@ hr{
   .zoom:hover{
       transform: scale(0.9);
   }
+
+
+  /*phone*/
+  @media only screen and (max-width: 375px) {
+    .container{
+        display: flex;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .details{
+        width: 90%;
+    }
+  .ds-sm{
+      display: flex;
+flex-direction: column !important;
+    }
+        .add-cart {
+            width: 100%;
+            margin-bottom: 2%;
+        }
+        .specification{
+            width: 100%;
+        }
+        .border-bottom{
+            width: 100%;
+        }
+  }
+
+
+
+  /*tablet*/
+  @media only screen and (min-width: 600px) and (max-width: 810px) {}

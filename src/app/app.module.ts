@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './HeaderFooter/footer/footer.component';
 import { HeaderComponent } from './HeaderFooter/header/header.component';
 import { FormsModule } from '@angular/forms';
-import {ErrorComponent} from './HeaderFooter/Error.Component/error.component'
+import {ErrorComponent} from './HeaderFooter/Error.Component/error.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {ErrorComponent} from './HeaderFooter/Error.Component/error.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

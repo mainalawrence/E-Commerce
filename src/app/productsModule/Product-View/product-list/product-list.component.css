@@ -5,6 +5,8 @@
     gap:1%;
     background-color: white;
     border-radius: 10px;
+    overflow:scroll;
+    height: auto;
 }
 a{
     text-decoration: none;
