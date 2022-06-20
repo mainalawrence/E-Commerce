@@ -8,15 +8,7 @@ export class CartService {
   products:any[]=[ 
     {id:1,image:"https://techbuyz.co.ke/wp-content/uploads/2021/07/HP-ProBook-440-G5-1.jpg",barnd:"sumsang",price:1200,quantity:1,subtotal:1200},
     {id:2,image:"https://techbuyz.co.ke/wp-content/uploads/2021/07/HP-ProBook-440-G5-1.jpg",barnd:"sumsang",price:1200,quantity:1,subtotal:1200},
-    {id:3,image:"https://techbuyz.co.ke/wp-content/uploads/2021/07/HP-ProBook-440-G5-1.jpg",barnd:"sumsang",price:1200,quantity:1,subtotal:1200},
-    {id:4,image:"https://techbuyz.co.ke/wp-content/uploads/2021/07/HP-ProBook-440-G5-1.jpg",barnd:"sumsang",price:1200,quantity:1,subtotal:1200},
-    {id:5,image:"https://techbuyz.co.ke/wp-content/uploads/2021/07/HP-ProBook-440-G5-1.jpg",barnd:"sumsang",price:1200,quantity:1,subtotal:1200},
-    {id:6,image:"https://techbuyz.co.ke/wp-content/uploads/2021/07/HP-ProBook-440-G5-1.jpg",barnd:"sumsang",price:1200,quantity:1,subtotal:1200},
-    {id:7,image:"https://techbuyz.co.ke/wp-content/uploads/2021/07/HP-ProBook-440-G5-1.jpg",barnd:"sumsang",price:1200,quantity:1,subtotal:1200},
-    {id:8,image:"https://techbuyz.co.ke/wp-content/uploads/2021/07/HP-ProBook-440-G5-1.jpg",barnd:"sumsang",price:1200,quantity:1,subtotal:1200},
-    {id:9,image:"https://techbuyz.co.ke/wp-content/uploads/2021/07/HP-ProBook-440-G5-1.jpg",barnd:"sumsang",price:1200,quantity:1,subtotal:1200}
-]
-
+  ]
 
 
   constructor() {
