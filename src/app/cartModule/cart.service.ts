@@ -28,7 +28,11 @@ export class CartService {
    }
   addProductCart(product:any){
      this.TotolPrice()
-    this.products.push(product);
+   if(this.products.find(item=>item.id===product.id)===undefined){
+     this.products.push(product);
+   }
+  
+    
   }
    removeProductCart(id:any){
     this.products=this.products.filter(product=>{

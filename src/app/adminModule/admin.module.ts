@@ -5,6 +5,7 @@ import { ProductFormComponent } from './component/product-form/product-form.comp
 import { ProductviewComponent } from './component/productview/productview.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MenuComponent } from './component/menu/menu.component';
 
 
 
@@ -12,11 +13,20 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     DashboardComponent,
     ProductFormComponent,
-    ProductviewComponent
+    ProductviewComponent,
+    MenuComponent
   ],
   imports: [
     RouterModule.forChild([{
-      path:'',component:DashboardComponent
+       path:'',
+      children:[
+        {path:'',component:DashboardComponent},
+        {path:'products',component:ProductFormComponent},
+        {path:'customers',component:DashboardComponent},
+        {path:'charts',component:DashboardComponent}
+
+      ]
+      
     }]),
     CommonModule,
     ReactiveFormsModule

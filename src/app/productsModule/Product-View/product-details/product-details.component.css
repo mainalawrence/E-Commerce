@@ -90,7 +90,22 @@ hr{
   .zoom:hover{
       transform: scale(0.9);
   }
+.star {
+    font-size: 1.5rem;
+    color: #b0c4de;
+}
 
+.filled {
+    color: #1e90ff;
+}
+
+.bad {
+    color: #deb0b0;
+}
+
+.filled.bad {
+    color: #ff1e1e;
+}
 
   /*phone*/
   @media only screen and (max-width: 375px) {

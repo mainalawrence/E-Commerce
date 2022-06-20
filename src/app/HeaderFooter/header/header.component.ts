@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbActiveOffcanvas, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -18,8 +19,11 @@ import { NgbActiveOffcanvas, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
   `
 })
 export class NgbdOffcanvasContent {
+  path=''
   constructor(public activeOffcanvas: NgbActiveOffcanvas) {
+    
   }
+
 }
 
 
@@ -30,7 +34,7 @@ export class NgbdOffcanvasContent {
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private offcanvasService: NgbOffcanvas) {}
+  constructor(private offcanvasService: NgbOffcanvas,public router:Router) {}
 
 
   ngOnInit(): void {
@@ -38,5 +42,10 @@ export class HeaderComponent implements OnInit {
   open(){
 const offcanvasRef = this.offcanvasService.open(NgbdOffcanvasContent);
   }
-
+  checkIfAdmin(){
+    if(this.router.url ==='/admin'){
+      return false;
+    }
+   return true;
+  }
 }
