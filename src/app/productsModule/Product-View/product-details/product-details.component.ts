@@ -9,7 +9,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ProductDetailsComponent implements OnInit {
 
-     images = ["https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/42/071213/7.jpg?7557"]
+     images = ["https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/42/071213/7.jpg?7557","https://www.stewancomputers.co.ke/wp-content/uploads/2022/03/Hp-probook-440-G4.jpg","https://www.stewancomputers.co.ke/wp-content/uploads/2022/03/Hp-probook-440-G4.jpg"]
   constructor(private config: NgbCarouselConfig) { 
         config.interval = 10000;
     config.wrap = false;

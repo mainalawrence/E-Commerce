@@ -1,29 +1,30 @@
-<div class="container">
+<div class="container mb-4">
     <div class="left">
         <div class="b-top">
-            <h4>Cart 1</h4>
+            <h4><b>{{cartservice.productCount()}}</b> Products in Cart</h4>
         </div>
-       <div class="" *ngFor="let item of [1,2,3,4,5,6]">
+       <div class="" *ngFor="let product of cartservice.products">
            <hr>
             <div class="product">
                 <div class="action">
                     <div class="image-name">
-                        <img src="https://ke.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/82/847145/1.jpg?9429"
-                            alt="">
-                        <h3> Sony MDR EXTRA BASS WIRELESS HEADPHONE</h3>
+                        <img src={{product.image}}
+                            alt="{{product.name}}">
+                        <h3> {{product.brand}}</h3>
                     </div>
                     <div class="price">
-                        <h2>KSh 1,999</h2>
+                    <b>Cost</b> <h4>Ksh: {{product.price}}</h4>
+                    <b>Subtotal</b> <h4>Ksh: {{product.subtotal}}</h4>
                     </div>
                 </div>
                 <div class="action">
                     <div class="remove">
-                        <button class="zoom btn "> <img src="../../../assets/delete.svg" alt="delete">REMOVE</button>
+                        <button (click)="cartservice.removeProductCart(product.id)"  class="zoom btn "> <img src="../../../assets/delete.svg" alt="delete">REMOVE</button>
                     </div>
                     <div class="add-sub">
-                        <button class="btn sub  zoom-out"><img src="../../../assets/sub.svg" alt=""></button>
-                        <label>0</label>
-                        <button class="btn add zoom-out"><img src="../../../assets/add.svg" alt=""></button>
+                        <button (click)="cartservice.reduceProductQuantityCart(product.id)" class="btn sub  zoom-out"><img src="../../../assets/sub.svg" alt=""></button>
+                        <label>{{product.quantity}}</label>
+                        <button (click)="cartservice.addProductQuantityCart(product.id)" class="btn add zoom-out"><img src="../../../assets/add.svg" alt=""></button>
                     </div>
                 </div>
             </div>
@@ -36,7 +37,7 @@
         <div class="title"><h4>CART SUMMARY</h4></div>
         <hr>
 
-        <div class="subtotal"><h3>Subtotal</h3> <h2>KSh 1,999</h2></div>
+        <div class="subtotal"><h3>Total</h3> <h2>KSh {{cartservice.Total}}</h2></div>
         <hr>
         <!-- <button class="btn w-100 zoom-out">Login</button> -->
         <div class="payment">
