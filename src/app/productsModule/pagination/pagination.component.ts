@@ -11,5 +11,6 @@ export class PaginationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+   page = 3;
+  isDisabled = false;
 }

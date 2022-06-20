@@ -7,7 +7,9 @@
     </div>
     <div class="center">
       
-<div class="filter-container"><img routerLink="/products/filter" class="zoom" src="../../../assets/filter.svg" alt="filter" /></div>
+<div class="filter-container"><img ngbPopover="filter Products" triggers="mouseenter:mouseleave"
+    (click)="open()"
+     class="zoom" src="../../../assets/filter.svg" alt="filter" /></div>
         <div class="form">
             <form #search="ngForm">
                 <input type="text" placeholder="  search.." ngModel name="search">
@@ -18,8 +20,10 @@
         </div>
     </div>
     <div class="right">
-        <img  routerLink="/auth/login" class="zoom" src="../../../assets/avata.svg" alt="filter"/>
-        <img   routerLink="/cart" class="zoom" src="../../../assets/cart.svg" alt="filter"/>
-        <button  routerLink="/products" class="btn zoom">Logout</button>
+        <img ngbPopover="signin /signup" triggers="mouseenter:mouseleave" routerLink="/auth/login" class="zoom" src="../../../assets/avata.svg" alt="filter"/>
+        <img ngbPopover="Cart" triggers="mouseenter:mouseleave"   routerLink="/cart" class="zoom" src="../../../assets/cart.svg" alt="filter"/>
+        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Disabled popover">
+        <button  popoverTitle="Pop title"  routerLink="/products" class="btn zoom">Logout</button>
+        </span>
     </div>
 </div>

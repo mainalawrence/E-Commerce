@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ProductListComponent } from './Product-View/product-list/product-list.component';
 import { ProductDetailsComponent } from './Product-View/product-details/product-details.component';
@@ -34,8 +35,12 @@ import { PaginationComponent } from './pagination/pagination.component';
       ]
     }]
     ),
-    CommonModule
-  ]
+    CommonModule,
+    NgbModule
+    
+    
+  ],
+  bootstrap:[ProductDetailsComponent]
 })
 
 export class ProductsModule { }
