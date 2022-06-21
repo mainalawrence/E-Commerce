@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ProductFormComponent } from './component/Products/product-form/product-form.component';
@@ -35,9 +36,10 @@ import { UserComponent } from './component/Users/user/user.component';
     }]),
     CommonModule,
     ReactiveFormsModule,
+    NgbModule,
    
   ]
   ,
-  bootstrap:[DashboardComponent]
+  bootstrap:[DashboardComponent,MenuComponent]
 })
 export class AdminModule { }

@@ -1,7 +1,10 @@
 <div *ngIf="checkIfAdmin()" class="container-fluid ">
     <div class="left ">
         <img routerLink="/products" class="zoom" src="../../../assets/brand.svg" alt="filter"/>
-        <img routerLink=""  class="hamburger" src="../../../assets/hamburger.svg" alt="hamburger"/>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         
 <span class="sidebar-toggle d-flex mr-2 "> <i class="hamburger align-self-center"></i></span>
     </div>

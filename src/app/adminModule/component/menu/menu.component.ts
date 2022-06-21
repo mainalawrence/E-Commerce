@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  //orders
+  public orderCollapsed=true;
+  public ProductCollapsed=true;
+  public UsersCollapsed=true;
 
   constructor() { }
 

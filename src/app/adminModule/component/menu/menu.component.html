@@ -11,22 +11,66 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  routerLink="/admin/">
-                            <span data-feather="file" class="align-text-bottom"></span>
-                            Orders
-                        </a>
+                        <button (click)="Orders.toggle()" type="button"
+                            class="btn d-flex justify-content-between align-item-center w-100 ">Orders <img
+                                src="../../../assets/down_collapse.svg">
+                        </button>
+                        <!-- collapses For orders -->
+                        <div #Orders="ngbCollapse" [(ngbCollapse)]="orderCollapsed">
+                            <div class="row w-100 ">
+                                <a class="nav-link" routerLink="/admin/products">
+                                    <span data-feather="shopping-cart" class="text-secondary "></span>
+                                    Orders
+                                </a>
+                                <a class="nav-link" routerLink="/admin/products">
+                                    <span data-feather="shopping-cart" class="align-text-bottom"></span>
+                                    Most
+                                </a>
+                                <a class="nav-link" routerLink="/admin/products">
+                                    <span data-feather="shopping-cart" class="align-text-bottom"></span>
+                                    Products
+                                </a>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/admin/products">
-                            <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                            Products
-                        </a>
+
+                        <button (click)="Products.toggle()" type="button"
+                            class="btn d-flex justify-content-between align-item-center w-100 ">Products <img
+                                src="../../../assets/down_collapse.svg">
+                        </button>
+                        <!-- collapses For orders -->
+                        <div #Products="ngbCollapse" [(ngbCollapse)]="ProductCollapsed">
+                            <div class="row w-100 ">
+                                <a class="nav-link" routerLink="/admin/products">
+                                    <span data-feather="shopping-cart" class="text-secondary "></span>
+                                    Products
+                                </a>
+                                <a class="nav-link" routerLink="/admin/products">
+                                    <span data-feather="shopping-cart" class="align-text-bottom"></span>
+                                    Add New Product
+                                </a>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  routerLink="/admin/">
-                            <span data-feather="users" class="align-text-bottom"></span>
-                            Customers
-                        </a>
+                     
+                        <button (click)="Users.toggle()" type="button"
+                            class="btn d-flex justify-content-between align-item-center w-100 ">Customers <img
+                                src="../../../assets/down_collapse.svg">
+                        </button>
+                        <div #Users="ngbCollapse" [(ngbCollapse)]="UsersCollapsed">
+                            <div class="row w-100 ">
+                                <a class="nav-link" routerLink="/admin/products">
+                                    <span data-feather="shopping-cart" class="text-secondary "></span>
+                                    View Users
+                                </a>
+                                <a class="nav-link" routerLink="/admin/products">
+                                    <span data-feather="shopping-cart" class="align-text-bottom"></span>
+                                    Edit Users
+                                </a>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"  routerLink="/admin/">

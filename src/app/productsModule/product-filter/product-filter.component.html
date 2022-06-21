@@ -1,12 +1,71 @@
-<div class="b-example-divider b-example-vr"></div>
+<div class="offcanvas-header">
+    <h5 class="offcanvas-title">Filter Products</h5>
+</div>
+<div class="offcanvas-body">
 
-<div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" style="width: 380px;">
-    <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
-        <svg class="bi pe-none me-2" width="30" height="24">
-            <use xlink:href="#bootstrap" />
-        </svg>
-        <span class="fs-5 fw-semibold">List group</span>
-    </a>
-    <div class="list-group list-group-flush border-bottom scrollarea">
-        
-    </div>
+<div class="container-fluid bg-light">
+    <div class="row">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-4">
+                   <button (click)="Category.toggle()" type="button" class="btn d-flex justify-content-between align-item-center w-100 ">Category <img src="../../../assets/down_collapse.svg">
+                    </button>
+                        <!-- Category -->
+                        <div #Category="ngbCollapse" [(ngbCollapse)]="CategoryCollapsed">
+                            <div class=" w-80  m-4 ">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Desktop
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Laptop
+                                </label>
+                            </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                    <button type="button" (click)="Price.toggle()"  class="btn d-flex justify-content-between align-item-center w-100 " >Price <img src="../../../assets/down_collapse.svg">
+                     </button>
+
+                        <!-- Price -->
+                        <div #Price="ngbCollapse" [(ngbCollapse)]="PriceCollapsed">
+                            <div class="row w-100 ">
+                                <a class="nav-link" routerLink="/admin/products">
+                                    <span data-feather="shopping-cart" class="text-secondary "></span>
+                                    Products
+                                </a>
+                                <a class="nav-link" routerLink="/admin/products">
+                                    <span data-feather="shopping-cart" class="align-text-bottom"></span>
+                                    Add New Product
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Ratting -->
+
+                        <button type="button" (click)="Ratting.toggle()"  class="btn d-flex justify-content-between align-item-center w-100 " >Ratting <img
+                                src="../../../assets/down_collapse.svg">
+                        </button>
+                        <div #Ratting="ngbCollapse" [(ngbCollapse)]="RatingCollapsed">
+                            <div class="row w-100 ">
+                                <a class="nav-link" routerLink="/admin/products">
+                                    <span data-feather="shopping-cart" class="text-secondary "></span>
+                                    View Users
+                                </a>
+                                <a class="nav-link" routerLink="/admin/products">
+                                    <span data-feather="shopping-cart" class="align-text-bottom"></span>
+                                    Edit Users
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+</div>
+
+</div>
