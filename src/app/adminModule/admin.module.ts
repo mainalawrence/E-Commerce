@@ -9,6 +9,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './component/menu/menu.component';
 import { UsersTableComponent } from './component/Users/users-table/users-table.component';
 import { UserComponent } from './component/Users/user/user.component';
+import { OrderListComponent } from './component/Orders/order-list/order-list.component';
+import { OrderComponent } from './component/Orders/order/order.component';
+import { ProductListComponent } from './component/Products/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -17,20 +20,30 @@ import { UserComponent } from './component/Users/user/user.component';
     ProductviewComponent,
     MenuComponent,
     UsersTableComponent,
-    UserComponent
+    UserComponent,
+    OrderListComponent,
+    OrderComponent,
+    ProductListComponent
   ],
   imports: [
     RouterModule.forChild([{
        path:'',
       children:[
-        {path:'',component:DashboardComponent,children:[
-        {path:'',component:ProductviewComponent},
-        {path:'products',component:ProductFormComponent},
-        {path:'customers',component:ProductviewComponent},
-        {path:'charts',component:DashboardComponent}
-        ]},
-     
+        {path:'',component:DashboardComponent,
+        children:[
+          {path:'',component:ProductviewComponent},
+          {path:'products',
+           children:[
+             {path:'',component:ProductFormComponent}
+            ,{path:'view-product',component:ProductListComponent},{path:'add-product',component:ProductFormComponent}]},
 
+            // products children route
+          {path:'users', children:[ 
+            {path:'',component:ProductviewComponent},
+            {path:'',component:UsersTableComponent}]},
+            // order children route
+          {path:'orders',children:[{path:'',component:OrderListComponent}]}
+        ]},
       ]
       
     }]),
