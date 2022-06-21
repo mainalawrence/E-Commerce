@@ -42,6 +42,7 @@ h2{
     border-width: 0 0 2px 0;
     border-style: solid;
     outline: 0px;
+    width: 90%;
 }
 .alert-danger {
     background-color: #f1b0af;

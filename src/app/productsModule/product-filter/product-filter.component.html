@@ -27,21 +27,25 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mb-4">
                     <button type="button" (click)="Price.toggle()"  class="btn d-flex justify-content-between align-item-center w-100 " >Price <img src="../../../assets/down_collapse.svg">
                      </button>
 
                         <!-- Price -->
                         <div #Price="ngbCollapse" [(ngbCollapse)]="PriceCollapsed">
-                            <div class="row w-100 ">
-                                <a class="nav-link" routerLink="/admin/products">
-                                    <span data-feather="shopping-cart" class="text-secondary "></span>
-                                    Products
-                                </a>
-                                <a class="nav-link" routerLink="/admin/products">
-                                    <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                                    Add New Product
-                                </a>
+                            <div class="d-flex w-100 m-4 justify-content-between align-item-center">
+                                <div class="input-group flex-nowrap">
+                                    <span class="input-group-text" id="addon-wrapping">Ksh</span>
+                                    <input type="text" class="form-control" value="100" aria-label="Username"
+                                        aria-describedby="addon-wrapping">
+                                </div>
+                                <label class="btn">-</label>
+                                    <div class="input-group flex-nowrap">
+                                        <span class="input-group-text" id="addon-wrapping">Ksh</span>
+                                        <input type="text" class="form-control" value="10000" aria-label="Username"
+                                            aria-describedby="addon-wrapping">
+                                    </div>
+                                    <button class="btn btn-default ml-2"><img src="../../../assets/left_collape1.svg"/></button>
                             </div>
                         </div>
                     </li>
@@ -52,15 +56,33 @@
                                 src="../../../assets/down_collapse.svg">
                         </button>
                         <div #Ratting="ngbCollapse" [(ngbCollapse)]="RatingCollapsed">
-                            <div class="row w-100 ">
-                                <a class="nav-link" routerLink="/admin/products">
-                                    <span data-feather="shopping-cart" class="text-secondary "></span>
-                                    View Users
-                                </a>
-                                <a class="nav-link" routerLink="/admin/products">
-                                    <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                                    Edit Users
-                                </a>
+                            <div class="row w-100 m-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        8 Ranks
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        4 Ranks
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        2 Ranks
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        1 Rank
+                                    </label>
+                                </div>
+
+
                             </div>
                         </div>
                     </li>
