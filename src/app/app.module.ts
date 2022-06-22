@@ -8,6 +8,7 @@ import { HeaderComponent } from './HeaderFooter/header/header.component';
 import { FormsModule } from '@angular/forms';
 import {ErrorComponent} from './HeaderFooter/Error.Component/error.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

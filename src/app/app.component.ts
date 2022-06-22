@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { AuthService } from './authenticationModule/Services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  atAdmin=1;
- 
-  constructor(private router:Router){
-
+  atAdmin=0;
+  constructor(private authService:AuthService){
+   this.authService.adminuser.subscribe(res=>{
+     this.atAdmin=res;
+   })
   }
 
   

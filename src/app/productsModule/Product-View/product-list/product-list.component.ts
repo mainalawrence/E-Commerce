@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProductstateService } from '../../Services/productstate.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,10 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductListComponent implements OnInit {
   products:any[]=[1,2,3,4,5,6,67,7,8,9,9,70,32,22]
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute,private productService:ProductstateService) { }
 
   ngOnInit(): void {
-
+this.productService.getProducts().subscribe(res=>{
+  //this.products=res;
+  console.log(res);
+  
+})
   }
 
 }

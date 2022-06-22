@@ -19,10 +19,5 @@ export class HeaderComponent implements OnInit {
   open(){
 const offcanvasRef = this.offcanvasService.open(ProductFilterComponent);
   }
-  checkIfAdmin(){
-    if(this.router.url ==='/admin'){
-      return false;
-    }
-   return true;
-  }
+
 }

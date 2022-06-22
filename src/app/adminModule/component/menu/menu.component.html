@@ -17,12 +17,12 @@
                         </button>
                         <!-- collapses For orders -->
                         <div #Orders="ngbCollapse" [(ngbCollapse)]="orderCollapsed">
-                            <div class="row w-100 ">
-                                <a class="nav-link" routerLink="/admin/orders">
+                            <div class="row w-100 m-2 ">
+                                <a class="nav-link active" routerLink="/admin/orders">
                                     <span data-feather="shopping-cart" class="text-secondary "></span>
                                     Orders
                                 </a>
-                                <a class="nav-link" routerLink="/admin/orders">
+                                <a class="nav-link active" routerLink="/admin/orders">
                                     <span data-feather="shopping-cart" class="align-text-bottom"></span>
                                     Most
                                 </a>
@@ -37,12 +37,12 @@
                         </button>
                       
                         <div #Products="ngbCollapse" [(ngbCollapse)]="ProductCollapsed">
-                            <div class="row w-100 ">
-                                <a class="nav-link" routerLink="/admin/products/view-product">
+                            <div class="row w-100  m-2">
+                                <a class="nav-link active" routerLink="/admin/products/view-product">
                                     <span data-feather="shopping-cart" class="text-secondary "></span>
                                     Products
                                 </a>
-                                <a class="nav-link" routerLink="/admin/products/add-product">
+                                <a class="nav-link active" routerLink="/admin/products/add-product">
                                     <span data-feather="shopping-cart" class="align-text-bottom"></span>
                                     Add New Product
                                 </a>
@@ -56,12 +56,12 @@
                                 src="../../../assets/down_collapse.svg">
                         </button>
                         <div #Users="ngbCollapse" [(ngbCollapse)]="UsersCollapsed">
-                            <div class="row w-100 ">
-                                <a class="nav-link" routerLink="/admin/users">
+                            <div class="row w-100  m-2">
+                                <a class="nav-link active" routerLink="/admin/users">
                                     <span data-feather="shopping-cart" class="text-secondary "></span>
                                     View Users
                                 </a>
-                                <a class="nav-link" routerLink="/admin/users">
+                                <a class="nav-link active" routerLink="/admin/users">
                                     <span data-feather="shopping-cart" class="align-text-bottom"></span>
                                     Edit Users
                                 </a>
@@ -69,7 +69,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  routerLink="/admin/">
+                        <a class="nav-link active"  routerLink="/admin/">
                             <span data-feather="bar-chart-2" class="align-text-bottom"></span>
                             Reports
                         </a>
