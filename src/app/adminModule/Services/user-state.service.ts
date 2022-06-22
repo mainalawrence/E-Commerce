@@ -10,18 +10,21 @@ export class UserStateService {
   constructor(private http: HttpClient, private router: Router) {}
 
   getUsers(){
-    return this.http.get<any>("http://localhost:4000/api/users");
-  }
-   getTrushUsers(){
+    console.log('called');
+    
     return this.http.get<any>("http://localhost:4000/api/users");
   }
 
-   UpdateUsers(){
+  getTrushUsers(){
     return this.http.get<any>("http://localhost:4000/api/users");
+  }
+  
+   UpdateUsers(user:any){
+    return this.http.put<any>("http://localhost:4000/api/users",user);
   } 
 
   trushUsers(id:string){
-    return this.http.delete<any>("http://localhost:4000/api/users/"+id);
+    return this.http.delete<any>("http://localhost:4000/api/users/soft/"+id);
   }
   deleteUsers(id:string){
     return this.http.delete<any>("http://localhost:4000/api/users/"+id);

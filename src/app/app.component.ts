@@ -7,7 +7,7 @@ import { AuthService } from './authenticationModule/Services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  atAdmin=0;
+  atAdmin=1;
   constructor(private authService:AuthService){
    this.authService.adminuser.subscribe(res=>{
      this.atAdmin=res;

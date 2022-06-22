@@ -39,7 +39,6 @@ import { ProductListComponent } from './component/Products/product-list/product-
 
             // products children route
           {path:'users', children:[ 
-            {path:'',component:ProductviewComponent},
             {path:'',component:UsersTableComponent}]},
             // order children route
           {path:'orders',children:[{path:'',component:OrderListComponent}]}
@@ -53,6 +52,6 @@ import { ProductListComponent } from './component/Products/product-list/product-
    
   ]
   ,
-  bootstrap:[DashboardComponent,MenuComponent]
+  bootstrap:[DashboardComponent,MenuComponent,UserComponent]
 })
 export class AdminModule { }
