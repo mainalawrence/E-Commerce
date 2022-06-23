@@ -12,6 +12,7 @@ import { UserComponent } from './component/Users/user/user.component';
 import { OrderListComponent } from './component/Orders/order-list/order-list.component';
 import { OrderComponent } from './component/Orders/order/order.component';
 import { ProductListComponent } from './component/Products/product-list/product-list.component';
+import { UpdateUsersComponent } from './component/Users/update-users/update-users.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProductListComponent } from './component/Products/product-list/product-
     UserComponent,
     OrderListComponent,
     OrderComponent,
-    ProductListComponent
+    ProductListComponent,
+    UpdateUsersComponent
   ],
   imports: [
     RouterModule.forChild([{

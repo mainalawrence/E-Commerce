@@ -9,9 +9,7 @@ export class UserStateService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  getUsers(){
-    console.log('called');
-    
+  getUsers(){ 
     return this.http.get<any>("http://localhost:4000/api/users");
   }
 
