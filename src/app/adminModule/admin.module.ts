@@ -13,6 +13,7 @@ import { OrderListComponent } from './component/Orders/order-list/order-list.com
 import { OrderComponent } from './component/Orders/order/order.component';
 import { ProductListComponent } from './component/Products/product-list/product-list.component';
 import { UpdateUsersComponent } from './component/Users/update-users/update-users.component';
+import { TrushUsersComponent } from './component/Users/trush-users/trush-users.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UpdateUsersComponent } from './component/Users/update-users/update-user
     OrderListComponent,
     OrderComponent,
     ProductListComponent,
-    UpdateUsersComponent
+    UpdateUsersComponent,
+    TrushUsersComponent
   ],
   imports: [
     RouterModule.forChild([{
@@ -41,7 +43,10 @@ import { UpdateUsersComponent } from './component/Users/update-users/update-user
 
             // products children route
           {path:'users', children:[ 
-            {path:'',component:UsersTableComponent}]},
+            {path:'',component:UsersTableComponent},
+            {path:'trush',component:TrushUsersComponent}
+          
+          ]},
             // order children route
           {path:'orders',children:[{path:'',component:OrderListComponent}]}
         ]},

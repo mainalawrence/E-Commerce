@@ -12,13 +12,16 @@ export class UserStateService {
   getUsers(){ 
     return this.http.get<any>("http://localhost:4000/api/users");
   }
+    getTrushedUsers(){ 
+    return this.http.get<any>("http://localhost:4000/api/trush/users");
+  }
 
   getTrushUsers(){
     return this.http.get<any>("http://localhost:4000/api/users");
   }
   
-   UpdateUsers(user:any){
-    return this.http.put<any>("http://localhost:4000/api/users",user);
+   UpdateUsers(user:any,id:string){
+    return this.http.put<any>("http://localhost:4000/api/users/"+id,user);
   } 
 
   trushUsers(id:string){

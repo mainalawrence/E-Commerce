@@ -1,42 +1,30 @@
-import { Component, OnInit ,Input} from '@angular/core';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
 import { UserStateService } from 'src/app/adminModule/Services/user-state.service';
 
-
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  selector: 'app-trush-users',
+  templateUrl: './trush-users.component.html',
+  styleUrls: ['./trush-users.component.css']
 })
-export class UserComponent implements OnInit {
-
-  myform:any;
-  updateId:string='';
-
-  @Input() Users:any=[]; 
-
-  pagesUsers:any;
+export class TrushUsersComponent implements OnInit {
+  Users:any[]=[]
+  constructor(private userStateService:UserStateService) { }
+ pagesUsers:any;
   page = 1;
   pageSize =10;
   collectionSize = this.Users.length;
-
-
-  constructor(private userStateService:UserStateService) {}
-  ngOnInit(): void {}
-
-
-  ngOnChanges(){
-  this.collectionSize = this.Users.length;
- this.refreshUsers();
-  
+  ngOnInit(): void {
+    this.userStateService.getTrushUsers().subscribe(res=>{
+        this.Users=res;
+       this.collectionSize = this.Users.length;
+       this.refreshUsers();
+    })
   }
-  
 
   refreshUsers() {
     this.pagesUsers =this.Users.map((user:any,i:any)=> ({_id: i + 1, ...user})).slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
-   
   updateUser(id:string){
    console.log(this.Users.filter((user:any)=>{
      if(user.id===id) return user;

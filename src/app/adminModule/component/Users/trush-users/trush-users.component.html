@@ -1,4 +1,3 @@
-
 <table class="table table-striped table-sm">
     <thead>
         <tr>
@@ -12,16 +11,18 @@
     </thead>
     <tbody *ngFor="let user of pagesUsers">
         <tr>
-                        <td>{{user._id}}</td>
-                        <td>{{user.firstName}}</td>
-                        <td>{{user.lastName}}</td>
-                        <td>{{user.email}}</td>
-                        <td>{{user.role}}</td>
-                        <td class="d-flex justify-content-between">
-                        <app-update-users [user]="user"></app-update-users>
-                        <img (click)="deleteUser(user.id)" class="zoom"  style="width: 35%;" src="../../../../../assets/delete.svg"></td>
-                        
-                    </tr>
+            <td>{{user._id}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.role}}</td>
+            <td class="d-flex justify-content-between">
+                <app-update-users [user]="user"></app-update-users>
+                <img (click)="deleteUser(user.id)" class="zoom" style="width: 35%;"
+                    src="../../../../../assets/delete.svg">
+            </td>
+
+        </tr>
     </tbody>
 
 </table>

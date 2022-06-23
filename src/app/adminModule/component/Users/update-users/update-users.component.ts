@@ -7,26 +7,31 @@ import { UserStateService } from 'src/app/adminModule/Services/user-state.servic
   templateUrl: './update-users.component.html',
   styleUrls: ['./update-users.component.css']
 })
-export class UpdateUsersComponent implements OnInit {
+export class UpdateUsersComponent {
 
-   closeResult = '';
-
+  closeResult = '';
+   role:any;
   constructor(private modalService: NgbModal,private userStateService:UserStateService) {}
 
-  ngOnInit(): void {
+@Input() user:any={}
 
-  }
+OnHandleUpdateUser(value:any){
 
-  ngOnChanges(){
-   if(this.opened==true){
-     this.open('content')
-   }
-   console.log(this.opened);
-   
-  }
+let data={
+deleted:  this.user.deleted,
+email:this.user.email,
+firstName:this.user.firstName,
+image:this.user.image,
+lastName:this.user.lastName,
+password:this.user.password,
+role:value
+}
+this.userStateService.UpdateUsers(data,this.user.id).subscribe(res=>{
+console.log(res);
 
-@Input() opened:boolean=false; 
-
+})
+ 
+}
 open(content:any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
