@@ -1,6 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { ProductstateService } from '../../Services/productstate.service';
 import { CartService } from 'src/app/cartModule/cart.service';
+
+interface ProductInterface{
+brand?:string,
+category?: string | null,
+deleted?: string | null,
+description?:string ,
+features?:string,
+id?:string ,
+images?:string ,
+name?:string ,
+price?: number
+}
 
 @Component({
   selector: 'app-product-details',
@@ -9,10 +23,17 @@ import { CartService } from 'src/app/cartModule/cart.service';
   providers: [NgbCarouselConfig]
 })
 export class ProductDetailsComponent implements OnInit {
+  id:string='';
+  Products:any;
+  images:string[] = []
+  Features:string[]=[];
+  specifications:string[]=[];
 
-     images = ["https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/42/071213/7.jpg?7557","https://www.stewancomputers.co.ke/wp-content/uploads/2022/03/Hp-probook-440-G4.jpg","https://www.stewancomputers.co.ke/wp-content/uploads/2022/03/Hp-probook-440-G4.jpg"]
-  constructor(private config: NgbCarouselConfig,public cartServices:CartService) { 
-        config.interval = 10000;
+  constructor(private config: NgbCarouselConfig,
+    public cartServices:CartService,
+    private router:ActivatedRoute,
+    private productService:ProductstateService) { 
+    config.interval = 10000;
     config.wrap = false;
     config.keyboard = false;
     config.pauseOnHover = false;
@@ -20,6 +41,23 @@ export class ProductDetailsComponent implements OnInit {
 
   currentRate:number=8;
   ngOnInit(): void {
+    this.router.params.subscribe((path=>{
+    this.id=path['id']
+    }))
+    this.Products=this.productService.Products.filter((product:any)=>{
+      if(product.id==this.id){
+        console.log(product); 
+         this.images= product.images.split(',').map((image:any)=>{
+          return "http://localhost:4000/Product/"+image
+         })
+         this.specifications=product.specification.split(',');
+         this.Features=product.features.split(',');
+        return product;
+      }
+      else return;
+    })
+    console.log(this.Products);
+     
   }
 
 }

@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ProductstateService {
-
+  Products:any[]=[];
   constructor(private http: HttpClient, private router: Router ) { }
 
   getProducts(){

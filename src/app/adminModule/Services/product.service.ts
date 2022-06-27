@@ -25,7 +25,7 @@ export class ProductService {
     return this.http.post<any>("http://localhost:4000/api/products",product)
     }
     updateProduct(product:any){
-      return this.http.put<any>('http://localhost:4000/api/products',{Headers:{'Content-Type':'multipart/form-data'}},product);
+      return this.http.put<any>('http://localhost:4000/api/products',product);
     }
     deleteProduct(id:string){
       return this.http.delete<any>('http://localhost:4000/api/products/soft/'+id);

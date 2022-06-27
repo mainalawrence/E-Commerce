@@ -59,30 +59,16 @@
         <div class="details">
             <h4 class="border tm">Details</h4>
             <div class="border-bottom">
-                <ol>
-                    <li>  flex: 0.7;</li>
-                        <li>%background;</li>
-                        <li>background-color: white;</li>
-                        <li>padding: 1%;</li>
-                        <li>border-radius:5px;</li>
-                        <li>display: flex;</li>
-                        <li>flex-direction: column;</li>
-                        <li>justify-content: center;</li>
+                <ol *ngFor="let feature of this.Features">
+                    <li>{{feature}}</li>  
                 </ol>
             </div>
         </div>
         <div class="specification">
             <h4 class="border tm">Specification</h4>
             <div class="border-bottom">
-                <ol>
-                    <li>  flex: 0.7;</li>
-                        <li>%background ;</li>
-                        <li>background-color: white;</li>
-                        <li>padding: 1%;</li>
-                        <li>border-radius:5px;</li>
-                        <li>display: flex;</li>
-                        <li>flex-direction: column;</li>
-                        <li>justify-content: center;</li>
+                <ol *ngFor="let feature of this.specifications">
+                    <li>{{feature}}</li>
                 </ol>
             </div>
         </div>
@@ -91,9 +77,9 @@
     </div>
     <div class="add-cart">
         <div class="product-price">
-           <h4> Product name</h4>
-           <h6>brand</h6>
-           <h3>KSh 15,999</h3>
+           <h4>{{Products.name}}</h4>
+           <h6>brand:{{Products.bland}}</h6>
+           <h3>KSh {{Products.price}}</h3>
         </div>
         <button (click)='cartServices.addProductCart({id:10,image:"https://techbuyz.co.ke/wp-content/uploads/2021/07/HP-ProBook-440-G5-1.jpg",barnd:"sumsang",price:2000,quantity:1,subtotal:2000})' class="btn d-flex justify-content-evenly w-100 h-10 h-3 zoom"><img style="width: 10%;" src="../../../../../assets/cart.svg"/>ADD TO CART</button>
         <hr>
