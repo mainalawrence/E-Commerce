@@ -8,18 +8,22 @@ import { ProductService } from 'src/app/adminModule/Services/product.service';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
-   aimage:any[]=[]
+  formData:any=null;
+
+  aimage:any[]=[]
+
   page:number=1;
+
   ProductForm!:FormGroup;
-   Types=["____Select___","Laptops","Computers","Phones","Acessories"]
+
+  Types=["____Select___","Laptops","Computers","Phones","Acessories"]
+
   constructor(private fb:FormBuilder,private productStateServices:ProductService) { }
-  formData=new FormData();
   ngOnInit(){
    let features=this.fb.array([]);
    let specifications=this.fb.array([]);
    let Images=this.fb.array([]);
  
-
     this.ProductForm=this.fb.group({
     name:['',Validators.required],
     cost:['',Validators.required],
@@ -102,22 +106,17 @@ getImages(){
   onSubmit($event:any) { 
   
     $event.preventDefault();
-   const product={
-    name:this.ProductForm.value.name,
-    cost:this.ProductForm.value.cost,
-    brand:this.ProductForm.value.brand,
-    description:this.ProductForm.value.description,
-    Features:this.ProductForm.value.features,
-    Specifications:this.ProductForm.value.specifications,
-    images:this.aimage,
-    type:this.ProductForm.value.type
-   }
-    
-   this.productStateServices.createProducts(product).subscribe(res=>{
-     console.log(res);
-     
-   })
-   }
+  this.formData=new FormData();
+  this.formData.append('data',JSON.stringify(this.ProductForm.value));
+  this.aimage.map(file=>{
+    this.formData.append('Product',file,'Product');
+  })
+  console.log(this.formData.value);
+  
+  
+  this.productStateServices.createProducts(this.formData).subscribe(res=>{  console.log(res); })
+  
+  }
    getPage(){
      return this.page
    }

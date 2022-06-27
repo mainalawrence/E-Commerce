@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -6,7 +6,12 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ProductService {
-   constructor(private http: HttpClient, private router: Router ) { }
+  headers=new HttpHeaders({
+
+  })
+   constructor(private http: HttpClient, private router: Router ) { 
+   
+   }
 
     getProducts() {
     return this.http.get<any>("http://localhost:4000/api/products");
@@ -15,11 +20,12 @@ export class ProductService {
     getTrushedProducts() {
     return this.http.get<any>("http://localhost:4000/api/trush/products");
     }
+    
    createProducts(product:any) {
-    return this.http.post<any>("http://localhost:4000/api/products",{'Content-Type':'multipart/form-data'},product);
+    return this.http.post<any>("http://localhost:4000/api/products",product)
     }
     updateProduct(product:any){
-      return this.http.put<any>('http://localhost:4000/api/products',{'Content-Type':'multipart/form-data'},product);
+      return this.http.put<any>('http://localhost:4000/api/products',{Headers:{'Content-Type':'multipart/form-data'}},product);
     }
     deleteProduct(id:string){
       return this.http.delete<any>('http://localhost:4000/api/products/soft/'+id);
