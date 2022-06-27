@@ -8,10 +8,10 @@
            <hr>
             <div class="product">
                 <div class="action">
-                    <div class="image-name">
-                        <img src={{product.image}}
+                    <div class="image-name ">
+                        <img src='{{product.image}}'
                             alt="{{product.name}}">
-                        <h3> {{product.brand}}</h3>
+                        <h6> {{product.brand}}</h6>
                     </div>
                     <div class="price">
                     <b>Cost</b> <h4>Ksh: {{product.price}}</h4>
@@ -42,8 +42,7 @@
         <hr>
         <!-- <button class="btn w-100 zoom-out">Login</button> -->
         <div class="payment">
-            <a class="btn btn-mpesa"><img class="mpesa zoom-out" src="../../../assets/mpesa.svg" alt="mpesa"></a>
-            <!-- <a ><img class="paypal zoom-out" src="../../../assets/paypal.svg" alt="paypal"></a> -->
+            <a (click)="this.cartservice.createOrder()" class="btn btn-mpesa"><img class="mpesa zoom-out" src="../../../assets/mpesa.svg" alt="mpesa"></a>
             <ngx-paypal [config]="payPalConfig"></ngx-paypal>
         </div>
 

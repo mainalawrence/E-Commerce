@@ -38,14 +38,15 @@ export class ProductDetailsComponent implements OnInit {
     config.keyboard = false;
     config.pauseOnHover = false;
   }
-
-  currentRate:number=8;
+  currentRate:number=5;
   ngOnInit(): void {
     this.router.params.subscribe((path=>{
     this.id=path['id']
     }))
     this.Products=this.productService.Products.filter((product:any)=>{
       if(product.id==this.id){
+        product.quantity=1;
+        product.subtotal=product.price;
         console.log(product); 
          this.images= product.images.split(',').map((image:any)=>{
           return "http://localhost:4000/Product/"+image
@@ -58,6 +59,11 @@ export class ProductDetailsComponent implements OnInit {
     })
     console.log(this.Products);
      
+  }
+  addProductoCart(){
+    console.log(this.Products);
+    
+    this.cartServices.addProductCart(this.Products)
   }
 
 }

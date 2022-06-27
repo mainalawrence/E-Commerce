@@ -1,32 +1,31 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   Total:number=0;
-  products:any[]=[ 
-    {id:1,image:"https://techbuyz.co.ke/wp-content/uploads/2021/07/HP-ProBook-440-G5-1.jpg",barnd:"sumsang",price:1200,quantity:1,subtotal:1200},
-    {id:2,image:"https://techbuyz.co.ke/wp-content/uploads/2021/07/HP-ProBook-440-G5-1.jpg",barnd:"sumsang",price:1200,quantity:1,subtotal:1200},
-  ]
+  products:any[]=[]
 
-
-  constructor() {
+  constructor(private http: HttpClient,  ) {
       this.TotolPrice()
    }
 
    productCount(){
      return this.products.length;
    }
+   
   addProductCart(product:any){
-     this.TotolPrice()
+     
    if(this.products.find(item=>item.id===product.id)===undefined){
-     this.products.push(product);
+     product[0].image='http://localhost:4000/Product/'+product[0].images.split(',')[0];
+     this.products.push(product[0]);
+     console.log(product[0]); 
    }
-  
-    
+  this.TotolPrice()
   }
-   removeProductCart(id:any){
+   removeProductCart(id:string){
     this.products=this.products.filter(product=>{
        if(product.id !==id){
         return product
@@ -34,7 +33,7 @@ export class CartService {
     })
     this.TotolPrice();
   }
-  reduceProductQuantityCart(id:number){
+  reduceProductQuantityCart(id:string){
     this.products.map(product=>{
     if(id==product.id){
         if(product.quantity>1){
@@ -45,7 +44,8 @@ export class CartService {
     })
     this.TotolPrice();
   }
-    addProductQuantityCart(id:number){
+    addProductQuantityCart(id:string){
+     
     this.products.map(product=>{
         if(id===product.id){
           product.quantity++;
@@ -63,6 +63,9 @@ export class CartService {
     })
   }
 
+  createOrder(){
+    return this.http.post<any>('http://localhost:4000/api/orders/',this.products)
+  }
 
 
 }
