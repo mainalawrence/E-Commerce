@@ -11,16 +11,20 @@ export class ProductService {
     getProducts() {
     return this.http.get<any>("http://localhost:4000/api/products");
     }
+
+    getTrushedProducts() {
+    return this.http.get<any>("http://localhost:4000/api/trush/products");
+    }
    createProducts(product:any) {
-    return this.http.post<any>("http://localhost:4000/api/products",product);
+    return this.http.post<any>("http://localhost:4000/api/products",{'Content-Type':'multipart/form-data'},product);
     }
     updateProduct(product:any){
-      return this.http.put<any>('http://localhost:4000/api/products',product);
+      return this.http.put<any>('http://localhost:4000/api/products',{'Content-Type':'multipart/form-data'},product);
     }
-    deleteProduct(id:any){
+    deleteProduct(id:string){
       return this.http.delete<any>('http://localhost:4000/api/products/soft/'+id);
     }
-    trushedProduct(){
+    trushedProduct(id:string){
     return this.http.get<any>("http://localhost:4000/api/products");
 
     }
